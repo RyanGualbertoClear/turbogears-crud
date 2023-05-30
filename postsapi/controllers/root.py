@@ -14,6 +14,7 @@ from tgext.admin.controller import AdminController
 from postsapi.lib.base import BaseController
 from postsapi.controllers.error import ErrorController
 from postsapi.controllers.post import PostController
+from postsapi.controllers.auth import AuthController
 
 __all__ = ['RootController']
 
@@ -22,7 +23,7 @@ class RootController(BaseController):
     secc = SecureController()
     admin = AdminController(model, DBSession, config_type=TGAdminConfig)
     post = PostController()
-
+    auth = AuthController()
     error = ErrorController()
 
     def _before(self, *args, **kw):

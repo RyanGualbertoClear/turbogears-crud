@@ -1,11 +1,9 @@
 """Post model module."""
 from sqlalchemy import *
-from sqlalchemy import Table, ForeignKey, Column
-from sqlalchemy.types import Integer, Unicode, DateTime, Float
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy import Column
+from sqlalchemy.types import Integer, Unicode, DateTime
 from datetime import datetime
-
-from postsapi.model import DeclarativeBase, metadata, DBSession
+from postsapi.model import DeclarativeBase, DBSession
 
 
 class Post(DeclarativeBase):
