@@ -5,7 +5,6 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="${response.charset}" />
-  <link rel="stylesheet" href="../public/css/style.css" />
   <title py:block="master_title">Your generic title goes here</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <py:block name="head"></py:block>
@@ -13,13 +12,13 @@
 
 <body class="min-w-screen min-h-screen flex flex-col gap-4">
   <header class="p-4 flex justify-between bg-blue-100">
-    <a rel="stylesheet" href="/post">
+    <a rel="stylesheet" href="/posts">
       <h1 class="font-bold text-4xl">
         Rede Social
       </h1>
     </a>
     <nav class="flex gap-4">
-      <a class="px-4 py-2 bg-green-500 rounded-lg text-white" href="/login">
+      <a class="px-4 py-2 bg-green-500 rounded-lg text-white" href="/">
         Login
       </a>
       <a class="px-4 py-2 bg-blue-500 rounded-lg text-white" href="/signup">

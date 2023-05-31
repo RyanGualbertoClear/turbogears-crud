@@ -1,5 +1,3 @@
-from postsapi.model.post import Post
-from postsapi.model.auth import Auth
 import zope.sqlalchemy
 from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
@@ -15,5 +13,7 @@ def init_model(engine):
     DBSession.configure(bind=engine)
     return DBSession
 
+from postsapi.model.post import Post
+from postsapi.model.user import User
 
-__all__ = ('Auth', 'Post')
+__all__ = ('User', 'Post')

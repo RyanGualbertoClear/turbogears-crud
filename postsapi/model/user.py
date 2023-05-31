@@ -5,7 +5,7 @@ from datetime import datetime
 from postsapi.model import DeclarativeBase, DBSession
 
 
-class Auth(DeclarativeBase):
+class User(DeclarativeBase):
     __tablename__ = 'users'
 
     id = Column(Integer, autoincrement=True, primary_key=True)
@@ -15,13 +15,14 @@ class Auth(DeclarativeBase):
     created = Column(DateTime, default=datetime.now)
 
     def login(self, email, password):
-        return DBSession.query(Auth).filter_by(email=email, password=password).first()
+        return DBSession.query(User).filter_by(email=email, password=password).first()
 
     def signup(self, name, email, password):
-        user = Auth(name=name, email=email, password=password)
+        user = User(name=name, email=email, password=password)
         DBSession.add(user)
         DBSession.flush()
+        print(user)
         return user
 
 
-__all__ = ['Auth']
+__all__ = ['User']

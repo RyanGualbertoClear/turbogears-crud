@@ -14,17 +14,17 @@
                 <input type="hidden" name="id" value="${post.id}" />
             </div>
             <label class="flex flex-col font-semibold">
-                Title: <input name="title" py:if="post" value="${post.title}"
+                Title <input name="title" py:if="post" value="${post.title}"
                     class="rounded-lg bg-[#ffffff] p-4 py-2 text-[#333333] gap-2 flex flex-col justify-between" />
                 <input name="title" py:if="post==None"
                     class="rounded-lg bg-[#ffffff] p-4 py-2 text-[#333333] gap-2 flex flex-col justify-between" />
             </label>
-            <label class="flex flex-col font-semibold"> body <input name="body" py:if="post" value="${post.body}"
+            <label class="flex flex-col font-semibold"> Conteúdo <input name="body" py:if="post" value="${post.body}"
                     class="rounded-lg bg-[#ffffff] p-4 py-2 text-[#333333] gap-2 flex flex-col justify-between" />
                 <input name="body" py:if="post==None"
                     class="rounded-lg bg-[#ffffff] p-4 py-2 text-[#333333] gap-2 flex flex-col justify-between" />
             </label>
-            <label class="flex flex-col font-semibold"> author <input name="author" py:if="post" value="${post.author}"
+            <label class="flex flex-col font-semibold"> Autor <input name="author" py:if="post" value="${post.author}"
                     class="rounded-lg bg-[#ffffff] p-4 py-2 text-[#333333] gap-2 flex flex-col justify-between" />
                 <input name="author" py:if="post==None"
                     class="rounded-lg bg-[#ffffff] p-4 py-2 text-[#333333] gap-2 flex flex-col justify-between" />

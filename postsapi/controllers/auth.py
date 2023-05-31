@@ -1,22 +1,23 @@
 from tg import expose, redirect
 
 from postsapi.lib.base import BaseController
-from postsapi.model import Auth
+from postsapi.model import User
 
 
 class AuthController(BaseController):
     @expose('postsapi.templates.login')
     def login(self, **kw):
-        user = Auth().login(kw['email'], kw['password'])
+        user = User().login(kw.get('email'), kw.get('password'))
         if user:
-            return redirect('/' + 'post')
+            return redirect('/' + 'posts')
         else:
-            return dict(page='login', error='Invalid email or password')
+            return dict(page='login', error='Email ou senha incorretos')
 
     @expose('postsapi.templates.signup')
     def signup(self, **kw):
-        user = Auth().signup(kw['name'], kw['email'], kw['password'])
+        user = User().signup(kw['name'], kw['email'], kw['password'])
+        print("user", user)
         if user:
-            return redirect('/' + 'post')
+            return redirect('/' + 'posts')
         else:
-            return dict(page='signup', error='Invalid fields')
+            return dict(page='signup', error='Campos inválidos')

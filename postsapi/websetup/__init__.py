@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """Setup the postsapi application"""
 
+from .schema import setup_schema
 import logging
 
 from postsapi.config.app_cfg import base_config
@@ -9,9 +10,6 @@ __all__ = ['setup_app']
 
 log = logging.getLogger(__name__)
 
-from .schema import setup_schema
-from .bootstrap import bootstrap
-
 
 def setup_app(command, conf, vars):
     """Place any commands to setup postsapi here"""
@@ -19,4 +17,3 @@ def setup_app(command, conf, vars):
     base_config.setup(conf)
 
     setup_schema(command, conf, vars)
-    bootstrap(command, conf, vars)

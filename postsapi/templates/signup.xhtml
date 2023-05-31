@@ -1,16 +1,24 @@
 <html py:extends="master.xhtml" py:strip="True">
 
 <head py:block="head" py:strip="True">
-  <title py:block="master_title">Login</title>
+  <title py:block="master_title">Cadastro</title>
 </head>
 
 <body py:block="body" py:strip="True">
   <div class="text-center">
-    <h1 class="text-3xl mb-2">Login</h1>
-    <p class="text-gray-500 mb-2">Preencha os campos abaixo para se Entrar</p>
+    <h1 class="text-3xl mb-2">Cadastro</h1>
+    <p class="text-gray-500 mb-2">Preencha os campos abaixo para se cadastrar</p>
   </div>
   <div class="justify-self-center self-center w-1/4 p-6 shadow appearance-none border">
-    <form action="/auth/login" method="post">
+    <form action="/auth/signup" method="post">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
+          Nome
+        </label>
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="name" type="text" placeholder="Nome" name="name" />
+      </div>
       <div class="mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
           Email
@@ -31,11 +39,11 @@
         <button
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           type="submit">
-          Entrar
+          Cadastrar
         </button>
       </div>
     </form>
-    <div py:if="error" class="text-red-500 text-sm mt-2">
+    <div class="text-red-500 text-xs italic" py:if="error">
       <p py:content="error"></p>
     </div>
   </div>
