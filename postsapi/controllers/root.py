@@ -21,7 +21,7 @@ __all__ = ['RootController']
 class RootController(BaseController):
     secc = SecureController()
     admin = AdminController(model, DBSession, config_type=TGAdminConfig)
-    posts = PostController()
+    post = PostController()
     auth = AuthController()
     error = ErrorController()
 

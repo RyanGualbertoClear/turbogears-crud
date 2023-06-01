@@ -10,7 +10,7 @@ class User(DeclarativeBase):
 
     id = Column(Integer, autoincrement=True, primary_key=True)
     name = Column(Unicode(255), nullable=False)
-    email = Column(Unicode(255), nullable=False)
+    email = Column(Unicode(255), nullable=False, unique=True)
     password = Column(Unicode(255), nullable=False)
     created = Column(DateTime, default=datetime.now)
 
